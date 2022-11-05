@@ -1,0 +1,165 @@
+.inaRow{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.cabeca{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Rawline';
+}
+
+.caixinha{
+    box-sizing: border-box;
+    width: 72px;
+    height: 24px;
+
+
+    position: absolute;
+    width: 72px;
+    height: 24px;
+    left: 8px;
+    top: 4px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 34px;
+
+    border: 1px dashed #333333;
+}
+
+.headFig{
+    display: flex;
+    flex-direction: column;
+}
+
+.headFig i{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    min-width: 50px;
+    top: 34px;
+    left: 0px;
+    color :#1351B4;
+}
+
+.head{
+    font-family: 'Rawline', sans-serif;
+    color:  #1351B4;
+    padding-left: 48px;
+    font-size: 24px;
+}
+
+.subtitulo{
+    font-family: 'Rawline', sans-serif;
+    color:  #555555;
+    padding-left: 48px;
+    font-size: 12px;
+    position: absolute;
+    top: 40px;
+}
+
+.headerLinks{
+    display: flex;
+    flex-direction: column;
+}
+
+.cabLinks{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.linkAccess{
+    margin-top: 12px;
+    font-family: 'Rawline', sans-serif;
+    font-weight: 400px;
+    color: #1351B4;
+    font-size: 12px;
+    line-height: 10px;
+    white-space: nowrap;
+    padding: 6px;
+}
+
+.userName{
+    box-sizing: border-box;
+    background: #FFFFFF;
+
+    padding-left: 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* padding: 0px 5px 0px 16px; */
+    gap: 6px;
+
+    width: 260px;
+    height: 32px;
+    /* Gray/.gray-40
+
+    888888
+    */
+    border: 1px solid #888888;
+    border-radius: 4px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.lupa{
+    position: relative;
+    top: -24px;
+    left: 230px;
+    color:  #1351B4;
+    font-size: 15px;
+}
+
+.elipse{
+    padding: 15px;
+    width: 100%;
+    border-right:1px solid #888888;
+}
+
+.glass{
+    padding: 15px;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+}
+
+.userPass{
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 160px;
+}
+
+
+@media (min-width: 601px)
+{
+    .icons{
+        display: none;
+    }
+}
+
+@media (max-width: 600px)
+{   
+    .cabLinks{
+        display: none;
+    }
+    .userPass{
+        display: none;
+    }
+}
