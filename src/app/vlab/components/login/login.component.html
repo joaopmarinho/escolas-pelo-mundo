@@ -1,0 +1,32 @@
+<div class="page" *ngIf="taNaRota()">
+
+    <h1 class="loginHeader">Login do Usuário</h1>
+
+    <div class="campos">
+        <div class="imagem">
+            <img src="../../../../assets/icon.png">
+        </div>
+        <div class="caixa">
+            <p class="titleForm">Identifique-se com:</p>
+            <form class="userInputs" [formGroup]="formLogin" (ngSubmit)="signIn()" >
+                <p class="userTitle">Nome de usuário</p>
+                <div class="userFig">
+                    <i class="fa-sharp fa-solid fa-user passKey"></i>
+                    <input type="text" class="userName" placeholder="Digite o seu nome de usuário"  formControlName="nome" />
+                </div>
+                <p class="userTitle">Senha</p>
+                <div userPass>
+                    <i class="fa-sharp fa-solid fa-key passKey"></i>
+                    <input type="password" class="userName" placeholder="Digita a sua senha atual" formControlName="senha" />
+                    <i class="fa-solid fa-eye passEye"></i>
+                </div>
+                <a href="" class="linkForget">Esqueci minha senha</a>
+            </form>
+
+            <div class="botoes">
+                <button class="userButtonCad" (click)="goCadastro()" >Cadastre-se</button>
+                <button type="submit" class="userButtonCont" (click)="signIn()" >Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>

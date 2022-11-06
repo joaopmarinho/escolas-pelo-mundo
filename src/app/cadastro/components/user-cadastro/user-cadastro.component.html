@@ -1,0 +1,97 @@
+<div class="overflow" *ngIf="taNaRota()">
+    <h1 class="titleUser">Cadastro do Usuário</h1>
+
+    <div class="campos">
+        <div class="caixa">
+            <p class="titleForm">Identifique-se com:</p>
+            <form [formGroup]="formCadastro" (ngSubmit)="onSubmit()" #formDir="ngForm">
+                <div class="userInputs">
+                    <p class="userTitle">Nome de usuário</p>
+                    <div class="userFig">
+                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <input type="search" name="user" id="user" class="userName" placeholder="Digite o seu nome de usuário" formControlName="nome" />
+                        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+                            <p>O nome é obrigatório!</p>
+                        </div>
+                    </div>
+
+                    <p class="userTitle">Email</p>
+                    <div class="userFig">
+                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <input type="email" name="email" id="email" class="userName" placeholder="Digite o seu email" formControlName="email" />
+                        <div *ngIf="email.invalid && formDir.submitted" class="validation-error">
+                            <p>O email é obrigatório!</p>
+                        </div>
+                    </div>
+
+                    <p class="userTitle">Confirme o seu Email</p>
+                    <div class="userFig">
+                        <i class="fa-sharp fa-solid fa-user"></i>
+                        <input type="email" name="emailconf" id="emailconf" class="userName" placeholder="Digite novamente o seu email" formControlName="emailConf" />
+                        <div *ngIf="emailConf.invalid && formDir.submitted" class="validation-error">
+                            <p>A confirmação de email é obrigatória!</p>
+                        </div>
+                        <div *ngIf="(email.value != emailConf.value) && formDir.submitted" class="validation-error">
+                            <p>Confira sua confirmação de email!</p>
+                        </div>
+                    </div>
+
+                    <p class="userTitle">Instituição</p>
+                    <div class="userFig">
+                        <i class="fa-regular fa-building"></i>
+                        <input type="text" name="instituicao" id="instituicao" class="userName" placeholder="Digite o nome da sua instituição" formControlName="instituicao" />
+                        <div *ngIf="instituicao.invalid && formDir.submitted" class="validation-error">
+                            <p>A instituição é obrigatória!</p>
+                        </div>
+                    </div>
+                    
+                    <p class="userTitle">Cargo</p>
+                    <div class="userFig">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <select name="select" id="select" class="userName" style="border: 1px solid #888888" style="color: #888888" formControlName="cargo">
+                            <option style="color: #888888" selected>Selecione o seu cargo</option>
+                            <option style="color: black" >Estudante</option>
+                            <option style="color: black">Professor</option>
+                        </select>
+                        <div *ngIf="cargo.invalid && formDir.submitted" class="validation-error">
+                            <p>O cargo é obrigatório!</p>
+                        </div>
+                    </div>
+
+                    <p class="userTitle">Senha</p>
+                    <div class="userPass">
+                        <i class="fa-sharp fa-solid fa-key passKey"></i>
+                        <input type="password" name="password" id="password" class="userName" placeholder="Escolha uma senha" formControlName="senha"/>
+                        <i class="fa-solid fa-eye passEye"></i>
+                        <div *ngIf="senha.invalid && formDir.submitted" class="validation-error">
+                            <p>A senha é obrigatória!</p>
+                        </div>
+                    </div>
+
+                    <p class="userTitle">Confirme a sua Senha</p>
+                    <div class="userPass">
+                        <i class="fa-sharp fa-solid fa-key passKey"></i>
+                        <input type="password" name="passwordconf" id="passwordconf" class="userName" placeholder="Digite novamente a senha escolhida" formControlName="senhaConf"/>
+                        <i class="fa-solid fa-eye passEye"></i>
+                        <div *ngIf="senhaConf.invalid && formDir.submitted" class="validation-error">
+                            <p>A confirmação de senha é obrigatória!</p>
+                        </div>
+                        <div *ngIf="(senhaConf.value != senha.value) && formDir.submitted" class="validation-error">
+                            <p>Confira sua confirmação de senha!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <input type="checkbox" class="check">
+                    <p class="terms">Aceito o <a href="" class="linkForget">Termos de Uso e Política de Privacidade.</a></p>
+                </div>
+
+                
+                <div class="botoes">
+                    <button class="userButtonCad" (click)="goLogin()" >Cancelar</button>
+                    <button type="submit" class="userButtonCont"  >Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
